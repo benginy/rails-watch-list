@@ -1,0 +1,39 @@
+<!-- app/views/lists/show.html.erb -->
+
+<div class="container">
+  <h1><%= @list.name %></h1>
+
+  <!-- Displaying the list details -->
+  <div class="list-details">
+    <p><strong>List Name:</strong> <%= @list.name %></p>
+  </div>
+
+  <!-- Section for Bookmarks -->
+  <div class="bookmarks">
+    <h2>Bookmarks</h2>
+
+    <% if @list.bookmarks.any? %>
+      <ul class="list-group">
+        <% @list.bookmarks.each do |bookmark| %>
+          <li class="list-group-item">
+            <strong>Movie:</strong> <%= bookmark.movie.title %><br>
+            <strong>Overview:</strong> <%= bookmark.movie.overview %><br>
+            <strong>Rating:</strong> <%= bookmark.movie.rating %><br>
+            <strong>Comment:</strong> <%= bookmark.comment %>
+
+
+            <%= link_to 'Delete Bookmark', bookmark_path(bookmark), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
+          </li>
+        <% end %>
+      </ul>
+    <% else %>
+      <p>No bookmarks yet.</p>
+    <% end %>
+  </div>
+
+  <!-- Link to add a new bookmark -->
+  <div class="add-bookmark mt-3">
+    <%= link_to 'Add New Bookmark', new_list_bookmark_path(@list), class: 'btn btn-primary' %>
+    <%= link_to 'Back to lists', lists_path, class: 'btn btn-secondary' %>
+  </div>
+</div>
