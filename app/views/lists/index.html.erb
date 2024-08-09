@@ -14,7 +14,7 @@
     <% @lists.each do |list| %>
       <li class="list-group-item p-0">
         <%= link_to list_path(list) do %>
-          <div class="card-img d-flex align-items-center justify-content-center text-white" style="background-image: url('<%= asset_path('movies-list.png') %>');">
+          <%= cl_image_tag list.photo.key, height: 300, width: 400, crop: :fill %>
             <h2 class="card-title text-white text-center p-3"><%= list.name %></h2>
           </div>
         <% end %>
