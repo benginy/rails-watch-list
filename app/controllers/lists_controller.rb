@@ -5,7 +5,9 @@ class ListsController < ApplicationController
     @lists = List.all
   end
 
+  # we instantiate a bookmark object here since we want to put the add a movie button directly on the list page
   def show
+    @bookmark = Bookmark.new
   end
 
   def new

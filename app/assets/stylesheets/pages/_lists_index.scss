@@ -1,0 +1,21 @@
+.banner-img {
+  width: 100%; /* Ensure the image spans the full width */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.card-img {
+  width: 100%; /* Ensure the card image spans the full width */
+  height: 200px; /* Set a fixed height for consistency */
+  background-size: cover; /* Ensure the background image covers the container */
+  background-position: center; /* Center the background image */
+}
+
+.card-title {
+  position: absolute; /* Position text over the image */
+  bottom: 0; /* Align text at the bottom */
+  width: 100%; /* Full width of the container */
+  text-align: center; /* Center the text horizontally */
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for text */
+  padding: 10px; /* Padding around text */
+  border-radius: 5px; /* Optional: Rounded corners for the text background */
+}

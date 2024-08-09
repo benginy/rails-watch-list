@@ -1,0 +1,70 @@
+/* app/assets/stylesheets/_lists_show.scss */
+
+.banner {
+  position: relative;
+  width: 100%;
+  height: 250px; // Adjust height to 250px
+
+  img {
+    width: 100%;
+    height: 250px; // Adjust height to 250px
+    object-fit: cover;
+  }
+
+  .banner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5); // Semi-transparent background
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  .add-bookmark {
+    position: absolute;
+    top: 50%; // Center vertically
+    right: 10px; // Position from the right
+    transform: translateY(-50%); // Adjust for vertical centering
+    background-color: rgba(255, 255, 255, 0.7); // More transparent background
+    padding: 10px;
+    border-radius: 5px;
+    width: auto; // Adjust width as needed
+    max-width: 300px; // Ensure it doesn't stretch too wide
+
+    .form-control-sm {
+      font-size: 0.875rem; // Smaller font size for compact form
+    }
+
+    .btn-sm {
+      font-size: 0.875rem; // Smaller button
+    }
+  }
+}
+
+.movie-poster {
+  max-width: 100%;
+  height: 250px; // Set height for consistency
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-text {
+  flex: 1; // Takes up remaining space
+}
+
+.btn-danger {
+  margin-top: auto; // Pushes the button to the bottom
+}
