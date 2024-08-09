@@ -3,11 +3,12 @@ class BookmarksController < ApplicationController
   before_action :set_list, only: [:new, :create]
 
   def new
-    @bookmark = @list.bookmarks.build
+    @bookmark = Bookmark.new
   end
 
   def create
-    @bookmark = @list.bookmarks.build(bookmark_params)
+    @bookmark = Bookmark.new(bookmark_params)
+    @bookmark.list = @list
     if @bookmark.save
       redirect_to list_path(@list), notice: 'Bookmark was successfully created.'
     else

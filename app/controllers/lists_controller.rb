@@ -6,7 +6,6 @@ class ListsController < ApplicationController
   end
 
   def show
-    # @list is already set by before_action
   end
 
   def new
