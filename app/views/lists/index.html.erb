@@ -15,7 +15,7 @@
     <li class="list-group-item p-0">
       <%= link_to list_path(list) do %>
         <% if list.photo.attached? %>
-          <%= cl_image_tag list.photo.key, height: 300, width: 400, crop: :fill %>
+          <%= cl_image_tag list.photo, height: 300, width: 400, crop: :fill %>
         <% end %>
         <h2 class="card-title text-white text-center p-3"><%= list.name %></h2>
       <% end %>
