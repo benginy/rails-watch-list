@@ -9,16 +9,16 @@
     <%= link_to "Create a new list", new_list_path, class: 'btn btn-primary position-absolute bottom-0 end-0 mb-3 me-3' %>
   </div>
 
-  <!-- List Section -->
-  <ul class="list-group mt-3">
-    <% @lists.each do |list| %>
-      <li class="list-group-item p-0">
-        <%= link_to list_path(list) do %>
+<!-- List Section -->
+<ul class="list-group mt-3">
+  <% @lists.each do |list| %>
+    <li class="list-group-item p-0">
+      <%= link_to list_path(list) do %>
+        <% if list.photo.attached? %>
           <%= cl_image_tag list.photo.key, height: 300, width: 400, crop: :fill %>
-            <h2 class="card-title text-white text-center p-3"><%= list.name %></h2>
-          </div>
         <% end %>
-      </li>
-    <% end %>
-  </ul>
-</div>
+        <h2 class="card-title text-white text-center p-3"><%= list.name %></h2>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
